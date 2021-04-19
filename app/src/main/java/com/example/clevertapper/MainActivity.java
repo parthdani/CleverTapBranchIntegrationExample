@@ -21,9 +21,8 @@ import java.util.HashMap;
 import io.branch.referral.Branch;
 import io.branch.referral.BranchError;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SyncListener {
 
-    SyncListener listener;
     private CleverTapAPI cleverTapDefaultInstance;
     private Branch.BranchReferralInitListener branchReferralInitListener =
             new Branch.BranchReferralInitListener() {
@@ -59,43 +58,20 @@ public class MainActivity extends AppCompatActivity {
         id = findViewById(R.id.identity);
 
         //Clevertap
+        CleverTapAPI.setDebugLevel(3);   //Set Log level to VERBOSE
         cleverTapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());
 
-
-        CleverTapAPI.setDebugLevel(CleverTapAPI.LogLevel.DEBUG);   //Set Log level to DEBUG log warnings or other important messages
+        cleverTapDefaultInstance.setSyncListener(this); // set listener for profileDidInitialize() callback
 
         getCTIDbutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ctid.setText(cleverTapDefaultInstance.getCleverTapID());
-
-
             }
         });
 
 
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                SyncListener listener1 = new SyncListener() {
-                    @Override
-                    public void profileDataUpdated(JSONObject updates) {
-
-                    }
-
-                    @Override
-                    public void profileDidInitialize(String CleverTapID) {
-                        Branch branch = Branch.getInstance();
-                        Log.e("BRANCH SDK", "I am in");
-                        Log.e("ClevertapTest", "Clevertap id is " + CleverTapID);
-
-                        branch.setRequestMetadata("$clevertap_attribution_id",
-                                CleverTapID);
-                        Branch.getAutoInstance(MainActivity.this).userCompletedAction("Parth Event Check"); //to push custom event to Branch
-
-                    }
-                };
-
-                CleverTapAPI.getDefaultInstance(getApplicationContext()).setSyncListener(listener1);
-
 
                 HashMap<String, Object> profileUpdate = new HashMap<String, Object>();
                 profileUpdate.put("Name", name.getText().toString());                  // String
@@ -112,39 +88,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-
-        listener = new SyncListener() {
-            @Override
-            public void profileDataUpdated(JSONObject updates) {
-
-            }
-
-            @Override
-            public void profileDidInitialize(String CleverTapID) {
-                Branch branch = Branch.getInstance();
-                Log.e("BRANCH SDK", "I am in");
-                Log.e("ClevertapTest", "Clevertap id is " + CleverTapID);
-
-                branch.setRequestMetadata("$clevertap_attribution_id",
-                        CleverTapID);
-
-
-                // Branch init
-                branch.initSession(branchReferralInitListener, MainActivity.this.getIntent().getData(), MainActivity.this);
-            }
-        };
-
-        CleverTapAPI.getDefaultInstance(getApplicationContext()).setSyncListener(listener);
-
-    }
-
-    @Override
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         this.setIntent(intent);
         Branch.getInstance().reInitSession(this, branchReferralInitListener);
+    }
+
+    @Override
+    public void profileDataUpdated(final JSONObject updates) {
+
+    }
+
+    @Override
+    public void profileDidInitialize(final String CleverTapID) {
+        Branch branch = Branch.getInstance();
+        Log.e("BRANCH SDK", "I am in");
+        Log.e("ClevertapTest", "Clevertap id is " + CleverTapID);
+
+        branch.setRequestMetadata("$clevertap_attribution_id",
+                CleverTapID);
+
+
+        // Branch init
+        branch.initSession(branchReferralInitListener, MainActivity.this.getIntent().getData(), MainActivity.this);
     }
 }
 

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "",
+    "firebase_url": "",
+    "project_id": "",
+    "storage_bucket": ""
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112273111716:android:1da2103af05ede3a",
+        "android_client_info": {
+          "package_name": "com.example.clevertapper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112273261716-12m0pn39nkb4j1101p9jihrujuja6l2c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.clevertapper",
+            "certificate_hash": "3db5b63c5c9c811ce20d2a8c74c6ec754e7aea9c"
+          }
+        },
+        {
+          "client_id": "112273261716-9vd03s0ivfqgh4q3lklb2i111roga18k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbQ8Qu2N_xktuRxIBx11NoOWIvVB3OXoY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112273261716-9vd03s11vfqgh4q3lklb2i1ksroga18k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "112273261716-kv2gf11h8rjmqtbfrv437ppjan06tdll.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.clevertapper"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
