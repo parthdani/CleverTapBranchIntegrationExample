@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">112273261716-9vd03s0ivfqgh4q3lklb2i111roga18k.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false"></string>
+    <string name="gcm_defaultSenderId" translatable="false"></string>
+    <string name="google_api_key" translatable="false">AIzaSyBbQ8Qu2N_xktuRxIBx11NoOWIvVB3OXoY</string>
+    <string name="google_app_id" translatable="false">1:112273111716:android:1da2103af05ede3a</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBbQ8Qu2N_xktuRxIBx11NoOWIvVB3OXoY</string>
+    <string name="google_storage_bucket" translatable="false"></string>
+    <string name="project_id" translatable="false"></string>
+</resources>

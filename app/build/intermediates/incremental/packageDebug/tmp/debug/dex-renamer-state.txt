@@ -1,0 +1,7 @@
+#Mon Apr 19 14:29:11 IST 2021
+base.0=/Users/piyush.kukadiya/projects-clevertap/forks/CleverTapBranchIntegrationExample/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/Users/piyush.kukadiya/projects-clevertap/forks/CleverTapBranchIntegrationExample/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex

@@ -1,0 +1,9 @@
+com/example/clevertapper/MainActivity.java
+ com.example.clevertapper.MainActivity
+ com.example.clevertapper.MainActivity$1
+ com.example.clevertapper.MainActivity$2
+ com.example.clevertapper.MainActivity$3
+com/example/clevertapper/MyApplication.java
+ com.example.clevertapper.MyApplication
+com/example/clevertapper/BuildConfig.java
+ com.example.clevertapper.BuildConfig

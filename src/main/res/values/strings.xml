@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">CleverTapper</string>
-    <string name="event">Event</string>
-    <string name="fire">FIRE</string>
-    <string name="inbox">INBOX</string>
-    <string name="event_property_name">Event property name</string>
-    <string name="native_title">Native Title</string>
-    <string name="native_txt">native_txt</string>
-</resources>
